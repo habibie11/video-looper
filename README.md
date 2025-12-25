@@ -65,6 +65,12 @@ Pastikan Anda sudah menginstal [Node.js](https://nodejs.org/) (versi 18 ke atas 
 
 ---
 
+## Screenshot
+<img width="1227" height="755" alt="image" src="https://github.com/user-attachments/assets/20c23546-e9b8-4ccc-9e1d-53f9a8c85963" />
+<img width="1227" height="755" alt="image" src="https://github.com/user-attachments/assets/27a863f7-823f-4c58-89ec-ee593c54832c" />
+<img width="1227" height="755" alt="image" src="https://github.com/user-attachments/assets/a8cb45c6-5267-4b0f-991e-7d027e6a991c" />
+
+
 ## ⚠️ Catatan Penting
 
 Karena aplikasi ini menggunakan `SharedArrayBuffer` (diperlukan oleh FFmpeg.wasm), server harus menyertakan header tertentu:
