@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoLooper - Infinite Moments</title>
+    <meta name="description" content="Loop your videos effortlessly with high quality output.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1 class="gradient-text">VideoLooper</h1>
+            <p class="subtitle">Loop your videos with zero quality loss, entirely in your browser.</p>
+        </header>
+
+        <section class="glass-card main-card">
+            <div id="dropzone" class="dropzone">
+                <div class="dropzone-content">
+                    <div class="icon-placeholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="17 8 12 3 7 8" />
+                            <line x1="12" y1="3" x2="12" y2="15" />
+                        </svg>
+                    </div>
+                    <h3>Drop your video here</h3>
+                    <p>or click to browse files</p>
+                    <input type="file" id="videoInput" accept="video/*" style="display: none">
+                </div>
+            </div>
+
+            <div id="editorSection" class="editor-section hidden">
+                <div class="file-info glass-card-inner">
+                    <span id="fileName">video.mp4</span>
+                    <button id="changeFile" class="text-btn">Change</button>
+                </div>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="loopCount">Number of Loops</label>
+                        <div class="number-input">
+                            <button id="decLoop" class="step-btn">−</button>
+                            <input type="number" id="loopCount" value="2" min="2" max="50">
+                            <button id="incLoop" class="step-btn">+</button>
+                        </div>
+                    </div>
+
+                    <button id="processBtn" class="primary-btn">
+                        <span>Create Loop Video</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                </div>
+            </div>
+
+            <div id="statusSection" class="status-section hidden">
+                <div class="progress-container">
+                    <div class="progress-bar-bg">
+                        <div id="progressBar" class="progress-bar"></div>
+                    </div>
+                    <p id="statusText">Initialing FFmpeg...</p>
+                </div>
+            </div>
+
+            <div id="resultSection" class="result-section hidden">
+                <div class="success-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                </div>
+                <h3>Processing Complete!</h3>
+                <p>Your looped video is ready to download.</p>
+                <div class="result-actions">
+                    <video id="resultPreview" controls class="result-preview"></video>
+                    <a id="downloadBtn" class="primary-btn pulse">
+                        <span>Download .mp4</span>
+                    </a>
+                    <button id="resetBtn" class="secondary-btn">Start New Task</button>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 VideoLooper. High-performance browser encoding.</p>
+        </footer>
+    </main>
+
+    <!-- Use ESM module with local FFmpeg packages -->
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
